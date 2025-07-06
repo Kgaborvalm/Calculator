@@ -1,0 +1,55 @@
+html{
+  box-sizing: border-box; /* ez azt jelenti, hogy a meret megadasaban benne legyen a padding es a margin is ne keljen ezt hozza adni*/
+  height: 100vh;
+  
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit; /* ez azt adja meg, hogy minden elem (*) es minden kitolto elem (*::before es..) orokolje a box-sizing -ot jelen esetben a html bol oroklik!*/
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex; /*ez kell, hogy az align-items es az egyeb igazitas mukodjon*/
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(320deg, #42f5e6,#42e0f5);
+  height: inherit;
+  font-family: Dosis, Sans-Serif;/*ez adja meg a betutipust ( a Sans-Serift tartalek) */
+  font-display: swap; /*ez mondja meg mit csinaljon, amig tolt a kep swap=irja ki siman amig nincs letoltve a formazas*/
+  
+}
+/*css szelektorok .wrapper -> class-t leres, #wrapper -> id-t keres, wrapper -> taget keres*/
+.wrapper{
+  backdrop-filter: blur(5.5px); /* ez blurozza ki*/
+  -webkit-backdrop-filter: blur(5.5px); /*ios kompatibilitas miatt*/
+  background: rgba(255,255,255,0.3);/*ez a hatter szint es a 0.6 azt jelenti hogy mennyire legyen attetszo*/
+  
+  border: 1px solid rgba(255,255,255,0.01);
+  
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(35,35,35,0.9);
+  
+  color: #232323; /*szoveg szine*/
+  
+  flex-basis: 75vw;
+  height: 75vh;
+  padding: 3vh 5vw;
+}
+
+.screen{
+  display: flex;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 3vh solid rgba(255,255,255,0.01);
+  border-radius: 1vw;
+  box-shadow: 0 4px 30px rgba(35, 35,35,0.1);
+  font-size: 2vh;
+  align-items: flex-start;
+  overflow: auto;
+  padding: 0vh;
+  text-align: left;
+}
