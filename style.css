@@ -19,11 +19,13 @@ body{
   background: linear-gradient(320deg, #42f5e6,#42e0f5);
   height: inherit;
   font-family: Dosis, Sans-Serif;/*ez adja meg a betutipust ( a Sans-Serift tartalek) */
-  font-display: swap; /*ez mondja meg mit csinaljon, amig tolt a kep swap=irja ki siman amig nincs letoltve a formazas*/
+  font-display: swap; /*ez mondja meg mit csinaljon, amig tölt a kep swap=irja ki siman amig nincs letoltve a formazas*/
+  background-attachment: fixed; /*ez kell az overscroll ellen*/
   
 }
 /*css szelektorok .wrapper -> class-t leres, #wrapper -> id-t keres, wrapper -> taget keres*/
 .wrapper{
+  
   backdrop-filter: blur(5.5px); /* ez blurozza ki*/
   -webkit-backdrop-filter: blur(5.5px); /*ios kompatibilitas miatt*/
   background: rgba(255,255,255,0.3);/*ez a hatter szint es a 0.6 azt jelenti hogy mennyire legyen attetszo*/
@@ -36,20 +38,77 @@ body{
   color: #232323; /*szoveg szine*/
   
   flex-basis: 75vw;
+  max-width: 75vw; /*hogy ne legyen majd nagyobb a screen*/
   height: 75vh;
+  max-height: 75vh ;
   padding: 3vh 5vw;
 }
 
+
 .screen{
-  display: flex;
+  
+  
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
-  border: 3vh solid rgba(255,255,255,0.01);
+  border: 2vh solid rgba(255,255,255,0.01);
   border-radius: 1vw;
-  box-shadow: 0 4px 30px rgba(35, 35,35,0.1);
-  font-size: 2vh;
-  align-items: flex-start;
-  overflow: auto;
-  padding: 0vh;
+  box-shadow: 0 4px 15px rgba(35, 35,35,0.6);
+  font-size: 5vh; /*betu meret*/
+  
+  overflow-x: auto;
+  white-space: nowrap; /*hogy ne legyen sor törés*/
+  padding: 0.1vh;
+  margin: 2vh 0; /*arreb tolja a gomboktol*/
   text-align: left;
 }
+
+.Szamologep_gombok {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh; /* rés a sorok között */
+  height: 50vh; /* vagy amit akarsz */
+}
+
+.row-buttons{
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+
+.calc-button{
+  
+  
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 0.1vh solid rgba(197, 124, 124, 0.01);
+  border-radius: 1vw;
+  box-shadow: 0 4px 15px rgba(35, 35,35,0.6);
+  font-size:4vh; /*betu meret*/
+  flex-basis: 18%; /*szélessé teszi a gombokat*/
+  background-color: #cdeff4;
+
+}
+
+
+.calc-button:nth-last-child(-n+2) {
+  
+  flex-basis: 20%; /*szélessé teszi a gombokat*/
+  background: rgb(81, 103, 226);
+  
+}
+
+
+.calc-button.kaki{
+  background: rgb(81, 103, 226);
+}
+
+.calc-button:hover { /*ha ravisszuk az egeret*/
+  filter: brightness(0.95); /* kicsit sötétebb */
+}
+.calc-button:active{ /*ha lenyomjuk*/
+  filter: brightness(0.85);
+}
+
+
+
